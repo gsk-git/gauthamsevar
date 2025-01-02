@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "wip"
+version = "0.1.0"
+description = "A sample Python project"
+authors = ["Gautham Sevar <gauthamsevar@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+[tool.poetry.dependencies]
+sqlalchemy = "^1.4"
+psycopg2-binary = "^2.9"
+[database]
+host = "localhost"
+port = 3306
+name = "wip"
+user = "root"
+password = "@dmin$4321@wip"
