@@ -8,12 +8,7 @@ class TestDatabase(unittest.TestCase):
 
     def setUp(self):
         # Set up a MySQL database connection
-        self.connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password=db_pswd,
-            database="wip"
-        )
+        self.connection = mysql.connector.connect(host="localhost",user="root",password=db_pswd,database="wip")
         self.cursor = self.connection.cursor()
         self.create_tables()
 

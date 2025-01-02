@@ -1,4 +1,4 @@
-Welcome to Where is parking development.
+## Welcome to Where is parking development.
 ## Introduction
 
 The "Where is Parking" app is designed to simplify the process of finding available parking spots near you. By leveraging your device's geolocation capabilities, the app identifies nearby parking lots and provides step-by-step navigation to guide you to the selected spot. Whether you're in a busy city or a crowded event, "Where is Parking" ensures that you can quickly and easily locate the nearest parking options, saving you time and reducing the stress of finding a place to park.
