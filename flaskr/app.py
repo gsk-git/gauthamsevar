@@ -6,10 +6,6 @@ import uuid
 
 app = Flask(__name__)
 
-def generateUUID():
-    return str(uuid.uuid4())
-uuid1=generateUUID()
-insertQuery(uuid1, "Selvan", "Ritesh", "Bangalore","Male", "9876543210")
 @app.route('/locate')
 def homepage():
     return render_template('index.html')

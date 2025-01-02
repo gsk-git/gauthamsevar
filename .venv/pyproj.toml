@@ -21,4 +21,4 @@ host = "localhost"
 port = 3306
 name = "wip"
 user = "root"
-password = "@dmin$4321@wip"
+password = db_pswd
