@@ -2,7 +2,7 @@ import mysql.connector, uuid, os
 
 #Database credentials
 db_pswd = os.environ.get('wip_db_password')
-print(db_pswd)
+#print(db_pswd)
 
 #Generating a unique id function
 def genUUID ():
@@ -33,6 +33,7 @@ def createTableQuery ():
     UUID varchar(255) NOT NULL,\
     LastName varchar(255),\
     FirstName varchar(255),\
+    EmailID varchar(255),\
     City varchar(255),\
     Gender varchar(255),\
     Mobile varchar(255),\
@@ -47,33 +48,24 @@ def createTableQuery ():
     wip_db.close()
 
 #Inserting data into table
-def insertQuery (uuid,lname,fname,city,gen,mobile):
+def insertQuery (uuid,lname,fname, email, city, gen, mobile, pswd):
+    db_pswd = os.environ.get('wip_db_password')
+    wip_db = mysql.connector.connect(host="localhost", user="root", passwd=db_pswd, database="wip")
+    mycursor = wip_db.cursor()
     #Creating a cursor object using the cursor() method
     #Preaparing SQL query to INSERT a record into the database.
-    query = "INSERT INTO Users (UUID, LastName, FirstName, City, Gender, Mobile) VALUES (%s, %s, %s, %s, %s, %s)"
-    values = (uuid, lname, fname, city, gen, mobile)
+    query = "INSERT INTO Users (UUID, LastName, FirstName, EmailID, City, Gender, Mobile, Password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    values = (uuid, lname, fname, email, city, gen, mobile, pswd)
     #Executing the SQL query
     mycursor.execute(query, values)
     #Commit the transaction
     wip_db.commit()
     #Closing the connection
-    
+    #wip_db.close()
     
 
 #calling the insertQuery function
-insertQuery(genUUID(), "Kumar", "Rahul", "Bangalore", "Male", "9876543210")
-insertQuery(genUUID(), "Smith", "John", "New York", "Male", "1234567890")
-insertQuery(genUUID(), "Doe", "Jane", "Los Angeles", "Female", "0987654321")
-insertQuery(genUUID(), "Williams", "James", "Mumbai", "Male", "1112223334")
-insertQuery(genUUID(), "Brown", "Patricia", "Delhi", "Female", "2223334445")
-insertQuery(genUUID(), "Jones", "Robert", "Chennai", "Male", "3334445556")
-insertQuery(genUUID(), "Garcia", "Linda", "Kolkata", "Female", "4445556667")
-insertQuery(genUUID(), "Miller", "Michael", "Hyderabad", "Male", "5556667778")
-insertQuery(genUUID(), "Davis", "Barbara", "Pune", "Female", "6667778889")
-insertQuery(genUUID(), "Rodriguez", "William", "Ahmedabad", "Male", "7778889990")
-insertQuery(genUUID(), "Martinez", "Elizabeth", "Surat", "Female", "8889990001")
-insertQuery(genUUID(), "Hernandez", "David", "Jaipur", "Male", "9990001112")
-insertQuery(genUUID(), "Lopez", "Jennifer", "Lucknow", "Female", "0001112223")
+#insertQuery(genUUID(), "Kumar", "Rahul", "rahul.kumar@example.com", "Bangalore", "Male", "9876543210", "holaholahola")
 wip_db.close()
 
 

@@ -21,30 +21,47 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Locate</a>
+            <a class="nav-link" href=locate>Locate</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Console</a>
+            <a class="nav-link" href=admin>Console</a>
           </li>
         </ul>
       </div>
     </nav>
+    
     <div class="container mt-5 rouded">
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="card">
             <div class="card-header">
-              <h5 class="text-center">User login</h5>
+              <h5 class="text-left">Want to find parkings?</h5>
+              <h6 class="text-left">Create a new accout</h6>
             </div>
             <div class="card-body">
-              <form>
+              <form action="/submit" method="post">
                 <div class="form-group">
-                  <input type="email" class="form-control" id="email" placeholder="Enter email">
+                  <input name="email-id" type="email" class="form-control" placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" id="password" placeholder="Password">
+                  <input name="firstName" type="text" class="form-control" placeholder="Enter first name">
                 </div>
-              <input type="submit" class="btn btn-secondary btn-block" disabled value="Submit">
+                <div class="form-group">
+                  <input name="lastName" type="text" class="form-control" placeholder="Enter last name">
+                </div>
+                <div class="form-group">
+                  <input name="mobile" type="phone" class="form-control" placeholder="Enter mobile number">
+                </div>
+                <div class="form-group">
+                  <input name="city" type="text" class="form-control" placeholder="Enter city">
+                </div>
+                <div class="form-group">
+                  <input name="gender" type="text" class="form-control" placeholder="Enter gender">
+                </div>
+                <div class="form-group">
+                  <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+              <input type="submit" class="btn btn-primary btn-block" value="Submit">
               </form>
             </div>
           </div>
